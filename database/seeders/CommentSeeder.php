@@ -16,7 +16,7 @@ class CommentSeeder extends Seeder
     {
         $this->disableForeignKeyCheck();
         $this->truncate('comments');
-        \App\Models\Comment::factory(3)->create();
+        \App\Models\Comment::factory(30)->create();
         $this->enableForeignKeyCheck();
 
     }

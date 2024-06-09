@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +11,12 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class CommentFactory extends Factory
 {
+
+
+    // get model count
+    // generate random number between 1 and model count
+
+
     /**
      * Define the model's default state.
      *
@@ -18,8 +26,8 @@ class CommentFactory extends Factory
     {
         return [
             'body' => [],
-            'user_id' => 1,
-            'post_id' => 1
+            'user_id' => fake()->numberBetween(1, User::count()),
+            'post_id' => fake()->numberBetween(1, Post::count()),
         ];
     }
 }
